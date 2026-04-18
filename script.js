@@ -1,31 +1,35 @@
 const btn = document.getElementById("okBtn");
 const message = document.getElementById("message");
 
-const sound1 = document.getElementById("sound1");
-const sound2 = document.getElementById("sound2");
+const sounds = [
+  document.getElementById("sound1"),
+  document.getElementById("sound2")
+];
 
-const options = [
-  { sound: sound1, text: "I love you." },
-  { sound: sound2, text: "사랑해요" }
+const texts = [
+  "I love you.",
+  "사랑해요"
 ];
 
 let index = 0;
 
 btn.addEventListener("click", () => {
-  // ⛔ stop ALL sounds first
-  options.forEach(opt => {
-    opt.sound.pause();
-    opt.sound.currentTime = 0;
+  // ⛔ HARD STOP all sounds
+  sounds.forEach(sound => {
+    sound.pause();
+    sound.currentTime = 0;
   });
 
-  const current = options[index];
+  const currentSound = sounds[index];
 
-  // ▶️ play current sound
-  current.sound.play();
+  // small delay to ensure stop worked
+  setTimeout(() => {
+    currentSound.play().catch(() => {});
+  }, 50);
 
-  // 💬 change text
-  message.textContent = current.text;
+  // change text
+  message.textContent = texts[index];
 
-  // 🔁 next index
-  index = (index + 1) % options.length;
+  // next
+  index = (index + 1) % sounds.length;
 });
