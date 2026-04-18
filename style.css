@@ -1,67 +1,82 @@
 body {
   background: #191919;
-  font-family: "Courier New", monospace;
+  font-family: "MS UI Gothic", "Courier New", monospace;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
+/* window */
 .window {
   width: 420px;
-  background: #e6cfd5;
-  border: 3px solid #000;
-  box-shadow: 6px 6px 0 #000;
+  background: #f6d6dc;
+  border: 2px solid black;
+  box-shadow: 6px 6px 0px black;
 }
 
+/* title bar */
 .title-bar {
-  background: #ff3c7f;
+  background: linear-gradient(to right, #ff4d88, #ff80ab);
   color: white;
-  padding: 6px;
+  padding: 4px 6px;
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  align-items: center;
+  font-size: 13px;
 }
 
-.close-btn {
-  width: 18px;
-  height: 18px;
-  border: 2px solid black;
+/* fake window buttons */
+.buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.btn {
+  width: 14px;
+  height: 14px;
   background: #ffc0cb;
+  border: 1px solid black;
 }
 
+/* content */
 .content {
   display: flex;
-  padding: 20px;
-  gap: 15px;
   align-items: center;
+  gap: 15px;
+  padding: 18px;
 }
 
 .icon {
-  font-size: 40px;
+  width: 48px;
+  height: 48px;
+  image-rendering: pixelated;
 }
 
+/* text */
 .text {
   text-align: center;
   flex: 1;
 }
 
 #message {
-  font-size: 18px;
   margin: 0;
+  font-size: 18px;
 }
 
 .face {
   margin: 5px 0;
 }
 
+/* button */
 button {
   margin-top: 10px;
-  padding: 5px 20px;
+  padding: 4px 18px;
   border: 2px solid black;
-  background: #f5d6db;
-  cursor: pointer;
+  background: #ffdbe3;
   font-family: inherit;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 black;
 }
 
 button:active {
